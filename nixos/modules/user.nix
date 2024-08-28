@@ -2,14 +2,14 @@
   users = {
     defaultUserShell = pkgs.bash;
 
-    users.nyverin = {
+    users.gabechu = {
       isNormalUser = true;
-      description = "nyverin";
+      description = "gabechu";
       extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" ];
       packages = with pkgs; [];
     };
   };
 
   # Enable automatic login for the user.
-  # services.getty.autologinUser = "nyverin";
+  # services.getty.autologinUser = "gabechu";
 }

@@ -107,8 +107,8 @@ in
 
   programs.git = {
     enable = true;
-    userName = "nyverin";
-    userEmail = "nyverin@gmail.com";
+    userName = "gabechu";
+    userEmail = "mbudak21@ku.edu.tr";
   };
 
   programs.htop = {

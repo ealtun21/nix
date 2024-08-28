@@ -37,7 +37,7 @@
   };
   
   security.sudo.extraRules= [
-    {  users = [ "nyverin" ];
+    {  users = [ "gabechu" ];
       commands = [
          { command = "ALL" ;
            options= [ "NOPASSWD" ];
