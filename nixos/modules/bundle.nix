@@ -8,6 +8,7 @@
     ./xserver.nix
     ./nm.nix
     ./virtmanager.nix
+    ./awesomewm.nix
     ./hyprland.nix
     ./trim.nix
     ./bluetooth.nix
