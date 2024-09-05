@@ -141,6 +141,10 @@
     });
   })];
 
+  services.xserver = {
+    enable = true;
+  };
+
 
   environment.sessionVariables.DEFAULT_BROWSER = "${pkgs.chromium}/bin/chromium";
 
