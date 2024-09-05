@@ -110,9 +110,10 @@
   # Enable dwm.
   services.xserver.windowManager.dwm.enable = true;
 
-  # Configure dwm.
+
   nixpkgs.overlays = [
   (self: super: {
+    # Configure dwm.
     dwm = super.dwm.overrideAttrs (oldAttrs: rec {
       patches = [
         (super.fetchpatch {
@@ -134,13 +135,16 @@
       ];
       configFile = super.writeText "config.h" (builtins.readFile ./dwm-config.h);
       postPatch = "${oldAttrs.postPatch}\ncp ${configFile} config.def.h\n";
-    });
+    }
+    
+    # Minecrraft:
+    inputs.polymc.overlay
+
+    );
   })];
 
 
   environment.sessionVariables.DEFAULT_BROWSER = "${pkgs.chromium}/bin/chromium";
-     
-  nixpkgs.overlays = [ inputs.polymc.overlay ];
 
   networking.hostName = "nixos"; # Define your hostname.
 
