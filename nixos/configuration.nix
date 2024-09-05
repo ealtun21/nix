@@ -87,6 +87,7 @@
 
   environment.etc."greetd/environments".text = ''
     hyprland
+    dwm
   '';
 
 
@@ -105,6 +106,37 @@
     thunar-archive-plugin
     thunar-volman
   ];
+
+  # Enable dwm.
+  services.xserver.windowManager.dwm.enable = true;
+
+  # Configure dwm.
+  nixpkgs.overlays = [
+  (self: super: {
+    dwm = super.dwm.overrideAttrs (oldAttrs: rec {
+      patches = [
+        (super.fetchpatch {
+          url = "https://dwm.suckless.org/patches/autostart/dwm-autostart-20210120-cb3f58a.diff";
+          sha256 = "1gksmq7ad3fs25afgj8irbwcidhyzh0cmba7vkjlsmbdgrc131yp";
+        })
+        (super.fetchpatch {
+          url = "https://dwm.suckless.org/patches/pertag/dwm-pertag-20200914-61bb8b2.diff";
+          sha256 = "1lbzjr972s42x8b9j6jx82953jxjjd8qna66x5vywaibglw4pkq1";
+        })
+        (super.fetchpatch {
+          url = "https://dwm.suckless.org/patches/fancybar/dwm-fancybar-20220527-d3f93c7.diff";
+          sha256 = "1q4318676aavvx7kiwqab4wzaq5y7b1n90cskpdgx1v3nvkq4s4x";
+        })
+        (super.fetchpatch {
+          url = "https://dwm.suckless.org/patches/alpha/dwm-alpha-20201019-61bb8b2.diff";
+          sha256 = "0qymdjh7b2smbv37nrh0ifk7snm07y4hhw7yiizh6kp2kik46392";
+        })
+      ];
+      configFile = super.writeText "config.h" (builtins.readFile ./dwm-config.h);
+      postPatch = "${oldAttrs.postPatch}\ncp ${configFile} config.def.h\n";
+    });
+  })];
+
 
   environment.sessionVariables.DEFAULT_BROWSER = "${pkgs.chromium}/bin/chromium";
      
