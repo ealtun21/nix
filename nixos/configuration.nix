@@ -112,6 +112,9 @@
 
 
   nixpkgs.overlays = [
+  # Minecrraft:
+  inputs.polymc.overlay
+
   (self: super: {
     # Configure dwm.
     dwm = super.dwm.overrideAttrs (oldAttrs: rec {
@@ -135,12 +138,7 @@
       ];
       configFile = super.writeText "config.h" (builtins.readFile ./dwm-config.h);
       postPatch = "${oldAttrs.postPatch}\ncp ${configFile} config.def.h\n";
-    }
-    
-    # Minecrraft:
-    inputs.polymc.overlay
-
-    );
+    });
   })];
 
 
