@@ -121,19 +121,19 @@
       patches = [
         (super.fetchpatch {
           url = "https://dwm.suckless.org/patches/autostart/dwm-autostart-20210120-cb3f58a.diff";
-          sha256 = "1gksmq7ad3fs25afgj8irbwcidhyzh0cmba7vkjlsmbdgrc131yp";
+          sha256 = "mrHh4o9KBZDp2ReSeKodWkCz5ahCLuE6Al3NR2r2OJg=";
         })
         (super.fetchpatch {
           url = "https://dwm.suckless.org/patches/pertag/dwm-pertag-20200914-61bb8b2.diff";
-          sha256 = "1lbzjr972s42x8b9j6jx82953jxjjd8qna66x5vywaibglw4pkq1";
+          sha256 = "wRZP/27V7xYOBnFAGxqeJFXdoDk4K1EQMA3bEoAXr/0=";
         })
         (super.fetchpatch {
           url = "https://dwm.suckless.org/patches/fancybar/dwm-fancybar-20220527-d3f93c7.diff";
-          sha256 = "1q4318676aavvx7kiwqab4wzaq5y7b1n90cskpdgx1v3nvkq4s4x";
+          sha256 = "twTkfKjOMGZCQdxHK0vXEcgnEU3CWg/7lrA3EftEAXc=";
         })
         (super.fetchpatch {
           url = "https://dwm.suckless.org/patches/alpha/dwm-alpha-20201019-61bb8b2.diff";
-          sha256 = "0qymdjh7b2smbv37nrh0ifk7snm07y4hhw7yiizh6kp2kik46392";
+          sha256 = "IkVGUl0y/DvuY6vquSmqv2d//QSLMJgFUqi5YEiM8cE=";
         })
       ];
       configFile = super.writeText "config.h" (builtins.readFile ./dwm-config.h);
