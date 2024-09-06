@@ -135,6 +135,22 @@
           url = "https://dwm.suckless.org/patches/alpha/dwm-alpha-20201019-61bb8b2.diff";
           sha256 = "IkVGUl0y/DvuY6vquSmqv2d//QSLMJgFUqi5YEiM8cE=";
         })
+        (super.fetchpatch {
+          url = "https://dwm.suckless.org/patches/tiledmove/dwm-tiledmove-20231210-b731.diff";
+          sha256 = "a9Ig6ZXisJTp7VH9lM1qO+iHoCh3J3OAPN43d8hZqcs=";
+        })
+        (super.fetchpatch {
+          url = "https://raw.githubusercontent.com/bakkeby/patches/master/dwm/dwm-fullscreen-compilation-6.3.diff";
+          sha256 = "37o2QfIfPZ4VrnhfHtiDHQQ8RpfdNQQ+we+fOqijSOA=";
+        })
+        # (super.fetchpatch {
+        #   url = "https://raw.githubusercontent.com/bakkeby/patches/master/dwm/dwm-cfacts-dragcfact-6.5.diff";
+        #   sha256 = "cXfLDKp7Ia8OjXj+LxlSZLEmbu32jwWqfRKilmQFuTs=";
+        # })
+        (super.fetchpatch {
+          url = "https://raw.githubusercontent.com/bakkeby/patches/master/dwm/dwm-dragmfact-6.5.diff";
+          sha256 = "LxPOJATyUrpmAIOT0ZqjXK+Rkp2+XDOlNs6OA5xmKY0=";
+        })
       ];
       configFile = super.writeText "config.h" (builtins.readFile ./dwm-config.h);
       postPatch = "${oldAttrs.postPatch}\ncp ${configFile} config.def.h\n";

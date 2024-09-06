@@ -45,7 +45,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.60; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
@@ -72,6 +72,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", blue, "-sb", blue, "-sf", gray4, NULL };
 static const char *termcmd[]    = { "kitty", NULL };
+static const char *browser[]    = { "chromium", NULL };
 static const char *upvolcmd[]   = { "pactl", "set-sink-volume", "0", "+5%",    NULL };
 static const char *downvolcmd[] = { "pactl", "set-sink-volume", "0", "-5%",    NULL };
 static const char *mutevolcmd[] = { "pactl", "set-sink-mute",   "0", "toggle", NULL };
@@ -79,21 +80,25 @@ static const char *mutevolcmd[] = { "pactl", "set-sink-mute",   "0", "toggle", N
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_i,      spawn,          {.v = browser } },
 	{ MODKEY,             			XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+//	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+//	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+//	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+//	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	{ MODKEY,             			XK_q,      killclient,     {0} },
+	{ MODKEY,                       XK_f,      togglefullscreen, {0} },
+	{ MODKEY|ShiftMask,             XK_f,      togglefakefullscreen, {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+//	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+//	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -111,7 +116,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY,             			XK_q,      quit,           {0} },
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvolcmd } },
 	{ 0,                            XF86XK_AudioMute, spawn, {.v = mutevolcmd } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvolcmd } },
