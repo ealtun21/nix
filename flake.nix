@@ -19,7 +19,7 @@
     };
 
     kuvpn = {
-      url = "github:ealtun21/kuvpn";
+      url = "github.com/KUACC-VALAR-HPC-KOC-UNIVERSITY/kuvpn";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

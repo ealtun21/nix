@@ -118,6 +118,7 @@
     gvfs
     xorg.xauth
     remmina
+    awesome
 
     lm_sensors
     bc

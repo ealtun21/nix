@@ -1,13 +1,13 @@
 {
   services.xserver = {
     enable = true;
-    windowManager.herbstluftwm.enable = true;
+    displayManager = {
+       autoLogin.enable = false;
+       autoLogin.user = "nyverin";
+       lightdm.enable = true;
+    };
 
-    # displayManager = {
-    #   autoLogin.enable = true;
-    #   autoLogin.user = "nyverin";
-    #   lightdm.enable = true;
-    # };
+    displayManager.startx.enable = true;
 
     layout = "us";
     xkbVariant = "";

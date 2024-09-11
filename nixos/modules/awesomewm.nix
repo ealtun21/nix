@@ -15,8 +15,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    desktops.xorg.enable = true;
-
     services.xserver.windowManager.awesome = {
       enable = true;
       package = derivations.awesome;

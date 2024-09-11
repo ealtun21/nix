@@ -93,11 +93,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1724932332,
-        "narHash": "sha256-UzTJU2BL0dC1OHMJt2l8yOTatfMGf/Ruy1d3xeZGwEY=",
+        "lastModified": 1725634585,
+        "narHash": "sha256-XlUCi8aIj+nBMapf5nBZxhrfoJktLuEC6PfU3QYEaxY=",
         "owner": "ealtun21",
         "repo": "kuvpn",
-        "rev": "2c54e302b4bfd22af6d05f3e8a34505d6ce252ba",
+        "rev": "982d9778a4df114ac00d40f0215d31a51b42dff6",
         "type": "github"
       },
       "original": {
