@@ -117,11 +117,16 @@
     easyeffects
     gvfs
     xorg.xauth
+    xorg.xinit
+    libinput
     remmina
     awesome
 
     lm_sensors
     bc
+    jetbrains.rust-rover
+    jetbrains.idea-community-bin
+    jetbrains.pycharm-community-bin
 
     inputs.kuvpn.packages.${pkgs.system}.default
 

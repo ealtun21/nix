@@ -5,8 +5,8 @@
     ./zram.nix
     ./env.nix
     ./user.nix
-    ./xserver.nix
     ./nm.nix
+    ./xserver.nix
     ./virtmanager.nix
     ./awesomewm.nix
     ./hyprland.nix

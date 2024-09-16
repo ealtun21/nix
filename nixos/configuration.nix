@@ -5,10 +5,6 @@
     ./modules/bundle.nix
   ];
 
-  disabledModules = [
-    ./modules/xserver.nix
-  ];
-
   programs.spicetify =
    let
      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
@@ -71,25 +67,6 @@
       fi
     '';
   };
-
-#  services.greetd = {
-#    enable = true;
-#    settings = {
-#     default_session.command = ''
-#      ${pkgs.greetd.tuigreet}/bin/tuigreet \
-#        --time \
-#        --asterisks \
-#        --user-menu \
-#        --cmd hyprland
-#    '';
-#    };
-#  };
-#
-#  environment.etc."greetd/environments".text = ''
-#    hyprland
-#    awesome
-#  '';
-
 
   programs.thunar.enable = true;
   programs.xfconf.enable = true;
