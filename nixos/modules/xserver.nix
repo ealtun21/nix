@@ -24,6 +24,10 @@
 
     displayManager.startx.enable = true;
 
+    # Set keyboard layouts and options
+    xkb.layout = "us, tr";
+    xkb.options = "grp:caps_toggle,shift:both_capslock_cancel";
+
     videoDrivers = [ "amdgpu" ];
     deviceSection = ''Option "TearFree" "True"'';
     #displayManager.gdm.enable = true;

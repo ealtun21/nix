@@ -256,7 +256,7 @@ theme.volume = lain.widget.alsabar {
 theme.volume.tooltip.wibox.fg = theme.fg_focus
 theme.volume.bar:buttons(my_table.join (
           awful.button({}, 1, function()
-            awful.spawn(string.format("%s -e alsamixer", awful.util.terminal))
+            awful.spawn(string.format("pavucontrol", awful.util.terminal))
           end),
           awful.button({}, 2, function()
             os.execute(string.format("%s set %s 100%%", theme.volume.cmd, theme.volume.channel))
