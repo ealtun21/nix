@@ -15,6 +15,8 @@
       alias upg "sudo nixos-rebuild switch --upgrade --flake $flakeDir"
       alias hms "home-manager switch --flake $flakeDir"
       alias fan_boost "sudo /home/nyverin/.cargo/bin/fan_boost"
+      alias meestic "/home/nyverin/.cargo/bin/meestic"
+      alias timovate "/home/nyverin/.cargo/bin/timovate"
       alias conf "hx $flakeDir/nixos/configuration.nix"
       alias pkgs "hx $flakeDir/nixos/packages.nix"
       alias ll "ls -l"

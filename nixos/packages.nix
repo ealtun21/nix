@@ -135,7 +135,7 @@
     #docker-compose # start group of containers for dev
     podman-compose # start group of containers for dev
 
-    (callPackage ./cursorsh.nix {})
+    # (callPackage ./cursorsh.nix {})
   ];
 
   fonts.packages = with pkgs; [
